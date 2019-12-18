@@ -1,10 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-#pasos siguientes desarrollo
+#pasos siguientes a desarrollar
 #0. Agregar variables adicionales
-#1. Web scrapping automatizado
-#2. Archivo CSV con catiables
+#1. Web scraping automatizado
+#2. Archivo CSV con variables
 
 page = requests.get('https://www.alibaba.com/product-detail/Portable-Small-USB-Travel-LED-Makeup_60830030133.html?spm=a2700.details.maylikever.2.1fb53cc2uSVPvx')
 
