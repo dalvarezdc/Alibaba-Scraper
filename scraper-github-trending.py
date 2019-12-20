@@ -3,6 +3,12 @@ from bs4 import BeautifulSoup
 import json
 import csv
 
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.expected_conditions import presence_of_element_located
+
 #pasos siguientes a desarrollar
 #0. Agregar variables adicionales
 #1. Archivo CSV con variables
@@ -20,6 +26,7 @@ soup = BeautifulSoup(page.text, 'html.parser')
 
 v2 = soup.select_one('meta[property="og:price:amount"][content]')['content']
 print("Min Price:",v2)
+#<meta property="og:price:amount" content="1.89"/>
 
 v3 = soup.select_one('meta[property="og:price:standard_amount"][content]')['content']
 print("Std Price:",v3)
@@ -41,11 +48,11 @@ print("Company Id: ", product_and_company_meta['companyId'])
 ###
 
 v6 = soup.select_one('meta[name="aplus-exdata"][content]')['content']
-print("v6 is",v6)    
+print("Raw PCID is",v6)    
     
-###
-#v7 = soup.select_one('a[class="score-lite"][content]')['content']
-#print("v7 is",v7) 
+###  Extract product user raitings
+stars = soup.select_one('a[class="score-lite"] ').get_text(strip=True)
+print('User raitings ', stars)
 
 ###CSV
 #Open file to write
