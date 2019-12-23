@@ -9,10 +9,20 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import presence_of_element_located
 
-#pasos siguientes a desarrollar
-#0. Agregar variables adicionales
-#1. Archivo CSV con variables
-#2. Web scraping automatizado
+start_time = time.time()
+
+#Steps to Develop (Code related)
+#0. Variables Extracted: ['Company Name', 'Company Id', 'Product Id', 'Standard Price'] (Done)
+#1. CSV Archive with variables created by code (Done)
+#2. Selenium using and understanding (In process)
+    #2.1. Opening browser, entering web pages, remote use, other functions (Done)
+    #2.2. Extracting multiple data on different pages (phones, emails) (Done)
+#3. Web scraping automatizado
+    #3.1. Buy Order
+    #3.2. Other Product Scraping
+#4. CSV Automatizado
+    #4.1. Entering data of multiple products: ASIN, Category, name, BBprice
+    #4.2. Financial related analysis
 
 
 page = requests.get('https://www.alibaba.com/product-detail/Portable-Small-USB-Travel-LED-Makeup_60830030133.html?spm=a2700.details.maylikever.2.1fb53cc2uSVPvx')
